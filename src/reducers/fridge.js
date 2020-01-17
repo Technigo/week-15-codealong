@@ -17,12 +17,15 @@ export const fridge = createSlice({
       // find 'cheese' or whatever item
       // remove it from the items array
       // id = 3
-      state.items = state.items.filter((item) => item.id !== action.payload)
+      state.items = state.items.filter(item => item.id !== action.payload)
+    },
+    removeAll: (state, action) => {
+      state.items = []
     },
     toggleNeedsMore: (state, action) => {
       console.log(action.payload)
       // find 'cheese'
-      const foundItem = state.items.find((item) => item.id === action.payload)
+      const foundItem = state.items.find(item => item.id === action.payload)
 
       // toggle the value of needsMore
       if (foundItem) {
